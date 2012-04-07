@@ -44,10 +44,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_step2.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="_step2.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/user/register/_step2.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="10" selection-start="1225" selection-end="1235" vertical-scroll-proportion="0.45783132">
+            <state line="25" column="10" selection-start="1225" selection-end="1235" vertical-scroll-proportion="-11.083333">
               <folding />
             </state>
           </provider>
@@ -89,10 +89,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.css" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="application.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="214" column="20" selection-start="5955" selection-end="5955" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -139,12 +139,12 @@
         <option value="$PROJECT_DIR$/app/models/scientific_rank.rb" />
         <option value="$PROJECT_DIR$/app/views/user/register/_chair.html.erb" />
         <option value="$PROJECT_DIR$/app/views/user/register/step2_to_step3.js.erb" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css" />
         <option value="$PROJECT_DIR$/app/controllers/user/register_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/user/register/_step3.html.erb" />
         <option value="$PROJECT_DIR$/app/views/user/register/_step2.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/user/script.js.coffee" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/user/register.js.coffee" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css" />
       </list>
     </option>
   </component>
@@ -641,7 +641,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="138" y="95" width="1270" height="1026" extended-state="1" />
+    <frame x="138" y="95" width="1270" height="1026" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32922825" sideWeight="0.7765363" order="0" side_tool="false" content_ui="tabs" />
@@ -769,11 +769,6 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="214" column="20" selection-start="5955" selection-end="5955" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/user/register/_step3.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="122" selection-start="741" selection-end="741" vertical-scroll-proportion="0.0">
@@ -802,7 +797,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/user/register/_step2.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="10" selection-start="1225" selection-end="1235" vertical-scroll-proportion="0.45783132">
+        <state line="25" column="10" selection-start="1225" selection-end="1235" vertical-scroll-proportion="-11.083333">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
