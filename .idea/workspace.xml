@@ -92,7 +92,7 @@
       <file leaf-file-name="application.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="382" column="0" selection-start="10269" selection-end="10269" vertical-scroll-proportion="0.68641114">
+            <state line="415" column="40" selection-start="10875" selection-end="10875" vertical-scroll-proportion="0.3466899">
               <folding />
             </state>
           </provider>
@@ -804,7 +804,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="382" column="0" selection-start="10269" selection-end="10269" vertical-scroll-proportion="0.68641114">
+        <state line="415" column="40" selection-start="10875" selection-end="10875" vertical-scroll-proportion="0.3466899">
           <folding />
         </state>
       </provider>
