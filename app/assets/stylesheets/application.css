@@ -369,3 +369,22 @@ article section.remark a:active
 {
     width: 322;
 }
+
+.sel_icon
+{
+    font-family: 'FontomasCustomRegular';
+    font-size: 18px;
+    color: rgb(106, 159, 171);
+    top: 6px;
+    width: 30px;
+    display: inline;
+    position:relative;
+}
+
+.selected-text
+{
+    display:inline;
+    left: 18px;
+    top: 6px;
+    position:relative;
+}
