@@ -357,3 +357,15 @@ article section.remark a:active
     top: 1px;
 }
 
+.sel_wrap
+{
+    margin-bottom:5px;
+}
+.sel_wrap select
+{
+    display:none;
+}
+.sel_imul
+{
+    width: 322;
+}
