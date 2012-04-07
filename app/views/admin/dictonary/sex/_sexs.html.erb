@@ -1,0 +1,16 @@
+<table>
+  <% for sex in @sexs %>
+    <tr>
+      <td>
+        <%= sex.name %>
+      </td>
+      <td>
+        <%= button_to("удалить", {:controller => '/admin/dictonary/sex', :action => 'destroy', :id => sex.id})%>
+      </td>
+      <td>
+        <%= button_to("изменить", {:controller => '/admin/dictonary/sex', :action => 'edit', :id => sex.id}, :method => :get)%>
+      </td>
+    <tr>
+  <% end %>
+</table>
+<%= button_to("добавить", {:controller => '/admin/dictonary/sex', :action => 'new'}, :method => :get) %>

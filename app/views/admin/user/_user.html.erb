@@ -1,0 +1,21 @@
+<table>
+  <tr>
+    <td>
+      <%= @user.email %>
+    </td>
+    <td>
+      <%= @user.password %>
+    </td>
+    <td>
+      <%= @user.last_name %>
+    </td>
+    <td>
+      <%= @user.first_name %>
+    </td>
+    <td>
+      <%= @user.middle_name %>
+    </td>
+  <tr>
+</table>
+<%= button_to("удалить", { :controller => '/admin/user', :action => 'destroy' }, :id => @user) %>
+<%= link_to("назад", { :controller => '/admin/user', :action => 'index' }) %>

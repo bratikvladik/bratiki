@@ -1,0 +1,100 @@
+<nav>
+  <ul>
+    <li><%= link_to("Назад", { :controller => '/admin/user', :action => 'index' })%></li>
+    <li><%= link_to("Пользователи", { :controller => '/admin/user', :action => 'index' })%></li>
+    <li><%= link_to("Факультеты", { :controller => '/admin/faculty', :action => 'index' })%></li>
+    <li><%= link_to("Словари", { :controller => '/admin/dictonary', :action => 'index' })%></li>
+    <li><%= link_to("Выход", {:controller => "/user/login", :action => "logout"})%></li>
+  </ul>
+</nav>​
+<article id="new_user">
+  <section id="main">
+    <%= form_tag({:action => "new"}) do %>
+      <h1>
+          Добавление
+      </h1>
+
+      <p class="field">
+        <label for="email" data-icon="e" > Email </label>
+        <%= text_field_tag("email", params[:email], {:placeholder => "mymail@mail.ru"})  %>
+        <label for="email" id="error_email" class="error"><%= flash[:email] %></label>
+      </p>
+      <p class="field">
+        <label for="password" data-icon="p"> Пароль </label>
+        <%= text_field_tag("password", params[:password], {:placeholder => "qwerty12345"})  %>
+        <label for="password" id="error_password" class="error"><%= flash[:password] %></label>
+      </p>
+
+      <p class="field">
+        <label for="last_name" data-icon="u" > Фамилия </label>
+        <%= text_field_tag("last_name", params[:last_name], {:placeholder => "Иванов"}) %>
+        <label for="last_name" id="error_last_name" class="error"><%= flash[:last_name] %></label>
+      </p>
+      <p class="field">
+        <label for="first_name" data-icon="u" > Имя </label>
+        <%= text_field_tag("first_name", params[:first_name], {:placeholder => "Иван"}) %>
+        <label for="first_name" id="error_first_name" class="error"><%= flash[:first_name] %></label>
+      </p>
+      <p class="field">
+        <label for="middle_name" data-icon="u" > Отчество </label>
+        <%= text_field_tag("middle_name", params[:middle_name], {:placeholder => "Иванович"}) %>
+        <label for="middle_name"  class="error"><%= flash[:middle_name] %></label>
+      </p>
+      <p>
+        <label for="sex">Ваш пол</label>
+        <%= select_tag(:sex, options_from_collection_for_select(Sex.all, :id, :name, params[:sex]),  {:class => "select", :id => "sex"}) %>
+      </p>
+
+      <% unless Faculty.all.empty? %>
+        <p>
+          <label for="faculty">Факультет</label>
+          <%= select_tag(:faculty, options_from_collection_for_select(Faculty.all, :id, :name, params[:faculty]), {:class => "select", :id => "faculty", :prompt => "факультет"}) %>
+        </p>
+      <% end %>
+      <% unless Chair.all.empty? %>
+        <p>
+          <label for="chair">Кафедра</label>
+          <%= select_tag(:faculty, options_from_collection_for_select(Chair.all, :id, :name, params[:chair]), {:class => "select", :id => "chair", :prompt => "кафедра"}) %>
+        </p>
+      <% end %>
+      <% unless MilitaryRank.all.empty? %>
+        <p>
+          <label for="military_rank">Воинское звание</label>
+          <%= select_tag(:military_rank, options_from_collection_for_select(MilitaryRank.all, :id, :name, params[:military_rank]),{:class => "select", :id => "military_rank", :prompt => "гражданский"}) %>
+        </p>
+       <% end %>
+        <% unless ScientificRank.all.empty? %>
+            <p>
+              <label for="scientific_rank"> Ученое звание </label>
+              <%= select_tag(:scientific_rank, options_from_collection_for_select(ScientificRank.all, :id, :name, params[:scientific_rank_id]),{:class => "select", :id => "scientific_rank", :prompt => "отсутствует"}) %>
+            </p>
+        <% end %>
+        <% unless ScientificDegree.all.empty? %>
+            <p>
+              <label for="scientific_degree"> Ученая степень </label>
+              <%= select_tag(:scientific_degree, options_from_collection_for_select(ScientificDegree.all, :id, :name, params[:scientific_degree_id]),{:class => "select", :id => "scientific_degree", :prompt => "отсутствует"}) %>
+            </p>
+        <% end %>
+      <% unless Post.all.empty? %>
+        <p>
+          <label for="post" class="post">Должность</label>
+          <%= select_tag(:post, options_from_collection_for_select(Post.all, :id, :name, params[:post]),{:class => "select", :id => "post", :prompt => "должность"}) %>
+        </p>
+      <% end %>
+      <p class="field">
+        <label for="phone" data-icon="☎" > Мобильный телефон </label>
+        <%= text_field_tag("phone", params[:phone], {:placeholder => "85555555555"})  %>
+        <label for="phone" id="error_phone" class="error"></label>
+      </p>
+      <p class="field">
+        <label for="room" data-icon="u" > Комната </label>
+        <%= text_field_tag("room", params[:room], {:placeholder => "268"})  %>
+        <label for="room" id="error_room" class="error"></label>
+      </p>
+    
+      <p class="button">
+        <%= submit_tag "Добавить" %>
+      </p>
+    <% end %>
+  </section>
+</article>

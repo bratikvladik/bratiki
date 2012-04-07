@@ -1,0 +1,5 @@
+<article id="register">
+  <section class="impotant_remark">
+      <%= render(:partial => "step4", :locals => {:is_admin => is_admin}) %>
+  </section>
+</article>

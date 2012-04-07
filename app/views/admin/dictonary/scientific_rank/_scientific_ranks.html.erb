@@ -1,0 +1,10 @@
+<% for scientific_rank in @scientific_ranks %>
+    <ul>
+      <li>
+        <%= link_to(scientific_rank.name, { :controller => 'admin/dictonary/scientific_rank', :action => 'edit', :id => scientific_rank}) %>
+      </li>
+      <li>
+        <%= link_to("удалить", { :controller => 'admin/dictonary/scientific_rank', :action => 'destroy', :id => scientific_rank }) %>
+      </li>
+    </ul>
+<% end %>

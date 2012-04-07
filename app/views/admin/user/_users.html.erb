@@ -1,0 +1,17 @@
+<% for user in @users %>
+  <ul>
+    <li>
+      <%= link_to(user.full_name, { :controller => 'admin/user', :action => 'edit', :id => user }) %>
+    </li>
+    <% if user.id != 1 %>
+      <li>
+        <%= link_to("удалить", { :controller => 'admin/user', :action => 'destroy', :id => user }) %>
+      </li>
+    <% end %>
+    <% if !user.activated && user.id != 1 %>
+      <li>
+        <%= link_to("активировать", { :controller => 'admin/user', :action => 'activate', :id => user }) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>

@@ -1,0 +1,28 @@
+<article id="login">
+  <section id="main">
+    <%= form_tag({:action => "login"}) do %>
+      <h1>
+        Вход
+      </h1>
+      <p class="field">
+        <label for="email" data-icon="e" > Ваш email </label>
+        <%= text_field_tag("email", params[:email], {:placeholder => "mymail@mail.ru", :id=>"login_email"})  %>
+        <label for="email" id="error_email" class="error"><%= flash[:email] if flash[:email] %></label>
+      </p>
+      <p class="field">
+         <label for="password" data-icon="p"> Ваш пароль </label>
+         <%= password_field_tag("password", params[:password], {:placeholder => "qwerty12345", :id=>"login_password"})  %>
+         <label for="password" id="error_password" class="error"><%= flash[:password] if flash[:password] %></label>
+      </p>
+      <p class="button">
+        <%= submit_tag "Войти" %>
+      </p>    
+    <% end %>
+  </section>
+  <section class="remark">
+    <p>
+      Вы еще не с нами?
+      <%= link_to("Присоединиться", { :controller => "/user/register", :action => "step1"}) %>
+    </p>
+  </section>
+</article>

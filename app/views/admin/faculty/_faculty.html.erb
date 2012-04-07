@@ -1,0 +1,10 @@
+<table>
+  <tr>
+    <td>
+      <%= @faculty.name %>
+      <%= button_to("Кафедры", {:controller => 'admin/chair', :action => 'index', :id => @faculty})  %>
+    </td>
+  <tr>
+</table>
+<%= button_to("удалить", { :controller => '/admin/faculty', :action => 'destroy' }, :id => @faculty) %>
+<%= link_to("назад", { :controller => '/admin/faculty', :action => 'index' }) %>

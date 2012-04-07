@@ -1,0 +1,37 @@
+<nav>
+  <ul>
+    <li><%= link_to("Назад", { :controller => '/admin/chair', :action => 'index' })%></li>
+    <li><%= link_to("Пользователи", { :controller => '/admin/user', :action => 'index' })%></li>
+    <li><%= link_to("Факультеты", { :controller => '/admin/faculty', :action => 'index' })%></li>
+    <li><%= link_to("Словари", { :controller => '/admin/dictonary', :action => 'index' })%></li>
+    <li><%= link_to("Выход", {:controller => "/user/login", :action => "logout"})%></li>
+  </ul>
+</nav>​
+<article id="new_chair">
+  <section id="main">
+    <%= form_tag({:action => "new"}) do %>
+        <h1>
+          Добавление
+        </h1>
+
+        <p class="field">
+          <label for="name" data-icon="e" > Название </label>
+          <%= text_field_tag("name", params[:name], {:placeholder => "Математический анализ"})  %>
+          <label for="name" id="error_name" class="error"><%= flash[:name] %></label>
+        </p>
+
+
+        <% unless Faculty.all.empty? %>
+            <p>
+              <label for="faculty"> Факультет </label>
+              <%= select_tag(:faculty, options_from_collection_for_select(Faculty.all, :id, :name, params[:faculty]), {:class => "select", :id => "faculty", :prompt => "факультет"}) %>
+            </p>
+        <% end %>
+
+
+        <p class="button">
+          <%= submit_tag "Добавить" %>
+        </p>
+    <% end %>
+  </section>
+</article>

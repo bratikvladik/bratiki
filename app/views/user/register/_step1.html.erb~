@@ -1,0 +1,38 @@
+<section>
+  <div id="wrapper">
+    <div id="register">
+      <div class="offer"><%= flash[:notice] if flash[:notice]%></div>
+      <%= form_tag({:action => "step1"}, :remote => true) do %>
+
+          <h1>Регистрация</h1>
+
+          <p>
+            <label for="email" class="email" data-icon="e" > Ваш email </label>
+            <%= text_field_tag("email", session[:email], {:placeholder => "mymail@mail.ru"})  %>
+          <div id="error_email" class="error"><%= flash[:email] %></div>
+          </p>
+          <p>
+            <label for="password" class="password" data-icon="p"> Ваш пароль </label>
+            <%= password_field_tag("password", session[:password], {:placeholder => "qwerty12345"})  %>
+          <div id="error_password" class="error"><%= flash[:password] %></div>
+          </p>
+          <p>
+            <label for="password_confirmation" class="password_confirmation" data-icon="p">Пожалуйста повторите пароль </label>
+            <%= password_field_tag("password_confirmation", session[:password_confirmation], {:placeholder => "qwerty12345"})  %>
+          <div id="error_password_confirmation" class="error"></div>
+          </p>
+
+          <p class="register button">
+            <%= submit_tag "Далее", :id => "step1_to_step2" %>
+          </p>
+
+          <% if User.first  %>
+            <p class="change_link">
+              Вы уже зарегистрированы?
+              <%= link_to("Тогда войдите", { :controller => "/user/login", :action => "login"}) %>
+            </p>
+          <% end %>
+      <% end %>
+    </div>
+  </div>
+</section>

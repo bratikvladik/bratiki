@@ -1,0 +1,22 @@
+$("#register").html("<%= escape_javascript(render(:partial => "step2")) %>");
+$("#last_name").css("background", "rgba(0, 255, 0, 0.2)")
+$("#first_name").css("background", "rgba(0, 255, 0, 0.2)")
+$("#middle_name").css("background", "rgba(0, 255, 0, 0.2)")
+$("#next_to_step3").focus();
+
+reselect = function(select, addclass) {
+    var sel_imul, sel_options, selected_option;
+    if (typeof addclass === 'undefined') addclass = '';
+    $(select).wrap('<div class="sel_wrap ' + addclass + '"/>');
+    sel_options = '';
+    selected_option = false;
+    $(select).children('option').each(function() {
+        if ($(this).is(':selected')) selected_option = $(this).index();
+        return sel_options = sel_options + '<div class="sel_option" value="' + $(this).val() + '">' + $(this).html() + '</div>';
+    });
+    sel_imul = '<div class="sel_imul"><div class="sel_selected"><div class="sel_icon">u</div><div class="selected-text">' + $(select).children('option').eq(selected_option).html() + '</div><div class="sel_arraw"></div></div><div class="sel_options">' + sel_options + '</div></div>';
+    return $(select).before(sel_imul);
+};
+
+
+reselect('#sex', 'sec overf round');

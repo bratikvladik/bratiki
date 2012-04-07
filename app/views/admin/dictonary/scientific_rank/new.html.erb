@@ -1,0 +1,29 @@
+<nav>
+  <ul>
+    <li><%= link_to("Назад", { :controller => '/admin/dictonary/scientific_rank', :action => 'index' })%></li>
+    <li><%= link_to("Воинкие звания", { :controller => '/admin/dictonary/military_rank', :action => 'index' })%></li>
+    <li><%= link_to("Ученые звания", { :controller => '/admin/dictonary/scientific_rank', :action => 'index' })%></li>
+    <li><%= link_to("Ученые степени", { :controller => '/admin/dictonary/scientific_degree', :action => 'index' })%></li>
+    <li><%= link_to("Должности", { :controller => '/admin/dictonary/post', :action => 'index' })%></li>
+    <li><%= link_to("Выход", {:controller => "/user/login", :action => "logout"})%></li>
+  </ul>
+</nav>​
+<article id="new_scientific_rank">
+  <section id="main">
+    <%= form_tag({:action => "new"}) do %>
+        <h1>
+          Добавление
+        </h1>
+
+        <p class="field">
+          <label for="name" data-icon="u" > Название </label>
+          <%= text_field_tag("name", params[:name], {:placeholder => "Доктор наук"})  %>
+          <label for="name" id="error_name" class="error"><%= flash[:name] %></label>
+        </p>
+
+        <p class="button">
+          <%= submit_tag "Добавить" %>
+        </p>
+    <% end %>
+  </section>
+</article>

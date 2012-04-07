@@ -1,0 +1,40 @@
+<section id="main">
+  <%= form_tag({:action => "step2"}, :remote => true) do %>
+    <h1>
+      Регистрация
+    </h1>
+    <p class="field">
+      <label for="last_name" data-icon="u" > Ваша фамилия </label>
+      <%= text_field_tag("last_name", session[:last_name], {:placeholder => "Иванов"}) %>
+      <label for="last_name" id="error_last_name" class="error"><%= flash[:last_name] %></label>
+    </p>
+    <p class="field">
+      <label for="first_name" data-icon="u" > Ваше имя </label>
+      <%= text_field_tag("first_name", session[:first_name], {:placeholder => "Иван"}) %>
+      <label for="first_name" id="error_first_name" class="error"><%= flash[:first_name] %></label>
+    </p>
+    <p class="field">
+      <label for="middle_name" data-icon="u" > Ваше отчество </label>
+      <%= text_field_tag("middle_name", session[:middle_name], {:placeholder => "Иванович"}) %>
+      <label for="middle_name"  id="error_middle_name" class="error"><%= flash[:middle_name] %></label>
+    </p>
+    <p>
+      <label for="sex">Ваш пол</label>
+      <%= select_tag(:sex, options_from_collection_for_select(Sex.all, :id, :name, session[:sex]),  {:class => "select", :id => "sex"}) %>
+    </p>
+    <p class="register button">
+      <%= submit_tag "Назад", :id => "step2_to_step1" %>
+      <%= submit_tag "Далее", :id => "step2_to_step3" %>
+      <%= submit_tag "Завершить", :id => "step2_to_step4" %>
+    </p>
+  <% end %>
+</section>
+<% if User.first  %>
+  <section class="remark">
+    <p>
+      Вы уже зарегистрированы?
+      <%= link_to("Тогда войдите", { :controller => "/user/login", :action => "login"}) %>
+    </p>
+  </section>
+<% end %>
+<%= button_to("",{:controller => 'pages/admin', :action => 'index'}, {:id => "end_of_registration", :display => "none"}) %>

@@ -1,0 +1,65 @@
+<section id="main">
+  <%= form_tag({:action => "step3"}, :remote => true) do %>
+    <h1>Регистрация</h1>
+    <% unless Faculty.all.empty? %>
+      <p>
+        <label for="faculty">Факультет</label>
+        <%= select_tag(:faculty, options_from_collection_for_select(Faculty.all, :id, :name, session[:faculty_id]), {:class => "select", :id => "faculty", :prompt => "факультет"}) %>
+      </p>
+    <% end %>
+    <% unless Chair.all.empty? %>
+      <p>
+        <label for="chair">Кафедра</label>
+        <%= select_tag(:chair, options_from_collection_for_select(Chair.all, :id, :name, session[:chair_id]), {:class => "select", :id => "chair", :prompt => "кафедра"}) %>
+      </p>
+    <% end %>
+    <% unless MilitaryRank.all.empty? %>
+      <p>
+        <label for="military_rank">Воинское звание</label>
+        <%= select_tag(:military_rank, options_from_collection_for_select(MilitaryRank.all, :id, :name, session[:military_rank_id]),{:class => "select", :id => "military_rank", :prompt => "гражданский"}) %>
+      </p>
+    <% end %>
+      <% unless ScientificRank.all.empty? %>
+          <p>
+            <label for="scientific_rank"> Ученое звание </label>
+            <%= select_tag(:scientific_rank, options_from_collection_for_select(ScientificRank.all, :id, :name, session[:scientific_rank_id]),{:class => "select", :id => "scientific_rank", :prompt => "отсутствует"}) %>
+          </p>
+      <% end %>
+      <% unless ScientificDegree.all.empty? %>
+          <p>
+            <label for="scientific_degree"> Ученая степень </label>
+            <%= select_tag(:scientific_degree, options_from_collection_for_select(ScientificDegree.all, :id, :name, session[:scientific_degree_id]),{:class => "select", :id => "scientific_degree", :prompt => "отсутствует"}) %>
+          </p>
+      <% end %>
+    <% unless Post.all.empty? %>
+      <p>
+        <label for="post" class="post">Должность</label>
+        <%= select_tag(:post, options_from_collection_for_select(Post.all, :id, :name, session[:post]),{:class => "select", :id => "post", :prompt => "должность"}) %>
+      </p>
+    <% end %>
+    <p class="field">
+      <label for="phone" data-icon="☎" > Мобильный телефон </label>
+      <%= text_field_tag("phone", session[:phone], {:placeholder => "85555555555"})  %>
+      <label for="phone" id="error_phone" class="error"><%= flash[:phone] %></label>
+    </p>
+    <p class="field">
+      <label for="room" data-icon="u" > Комната </label>
+      <%= text_field_tag("room", session[:room], {:placeholder => "268"})  %>
+      <label for="room" id="error_room" class="error"><%= flash[:room] %></label>
+    </p>
+    <p class="button">
+      <%= submit_tag "Назад", :id => "step3_to_step2" %>
+      <%= submit_tag "Завершить", :id => "step3_to_step4" %>
+    </p>
+  <% end %>
+</section>
+<% if User.first  %>
+  <section class="remark">
+    <p>
+      Вы уже зарегистрированы?
+      <%= link_to("Тогда войдите", { :controller => "/user/login", :action => "login"}) %>
+    </p>
+  </section>
+<% end %>
+<%= button_to("",{:controller => 'pages/admin', :action => 'index'}, {:id => "end_of_registration", :display => "none"}) %>
+

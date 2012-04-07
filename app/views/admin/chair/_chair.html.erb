@@ -1,0 +1,9 @@
+<table>
+  <tr>
+    <td>
+      <%= @chair.name %>
+    </td>
+  <tr>
+</table>
+<%= button_to("удалить", { :controller => '/admin/chair', :action => 'destroy' }, :id => @chair) %>
+<%= link_to("назад", { :controller => '/admin/chair', :action => 'index' }) %>
