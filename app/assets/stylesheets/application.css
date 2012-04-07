@@ -358,3 +358,62 @@ article section.remark a:active
 }
 
 
+
+
+nav{
+    width: 960px;
+    margin: 80px auto;
+    text-align: center;
+}
+
+nav ul
+{
+    margin: 1px;
+    padding: 0;
+    text-align: center;
+}
+section ul{
+    display: block;
+    margin: 10px;
+    padding: 0;
+    text-align: left;
+}
+
+nav li, section ul li{
+    text-align: left;
+    margin: 0 0px;
+    display: inline-block;
+
+    zoom: 1;
+}
+nav a, section ul li a
+{
+    display: inline-block;
+    position: relative;
+    padding: 8px 15px;
+    border: 2px solid #fff;
+    text-decoration: none;
+    color: #fff;
+    font: bold 14px 'Lucida sans', Arial, Helvetica;
+    background-color: rgb(61, 157, 179);
+    background-image: linear-gradient(top, #eaeaea, #fff);
+    border-radius: 3px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05) inset,
+    0 0 1px 0 rgba(0, 0, 0, .2),
+    0 2px 2px rgba(0, 0, 0, .3),
+    0 10px 10px -5px rgba(0, 0, 0, .2);
+}
+
+nav a:hover, section ul li a:hover
+{
+    background-color: rgb(74, 179, 198);
+    background-image: linear-gradient(top, #eee, #fff);
+}
+
+nav a:active, section ul li a:active
+{
+    top: 1px;
+    background: rgb(40, 137, 154);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05) inset, 0 0 1px 0px rgba(0, 0, 0, .2), 0 1px 2px rgba(0, 0, 0, .3);
+}
+​
