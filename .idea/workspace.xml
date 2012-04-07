@@ -92,7 +92,7 @@
       <file leaf-file-name="application.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="415" column="40" selection-start="10875" selection-end="10875" vertical-scroll-proportion="0.3466899">
+            <state line="106" column="63" selection-start="2448" selection-end="2448" vertical-scroll-proportion="0.17595819">
               <folding />
             </state>
           </provider>
@@ -156,8 +156,8 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="140" />
-    <option name="y" value="97" />
+    <option name="x" value="141" />
+    <option name="y" value="98" />
     <option name="width" value="1270" />
     <option name="height" value="1026" />
   </component>
@@ -641,7 +641,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="140" y="97" width="1270" height="1026" extended-state="0" />
+    <frame x="141" y="98" width="1270" height="1026" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32922825" sideWeight="0.7765363" order="0" side_tool="false" content_ui="tabs" />
@@ -804,7 +804,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="415" column="40" selection-start="10875" selection-end="10875" vertical-scroll-proportion="0.3466899">
+        <state line="106" column="63" selection-start="2448" selection-end="2448" vertical-scroll-proportion="0.17595819">
           <folding />
         </state>
       </provider>

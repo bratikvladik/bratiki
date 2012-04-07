@@ -467,3 +467,71 @@ article section.remark a:active
     background:#dbdbdb;
     border-color:#dbdbdb;
 }
+
+.sec .sel_imul .sel_selected
+{
+    border:1px solid #C0CAD5;
+}
+
+.sel_imul.act .sel_selected
+{
+    background:#fff;
+}
+
+.sec .sel_imul:hover .sel_selected .sel_arraw
+{
+    background-color:#e1e8ed;
+    border-left:1px solid #d2dbe0;
+}
+
+.sec .sel_imul.act .sel_selected .sel_arraw
+{
+    background-color:#e1e8ed;
+    border-left:1px solid #d2dbe0;
+}
+
+.sec .sel_imul .sel_options
+{
+    background:#fff;
+    border:1px solid #d2dbe0;
+    width:322px;
+}
+.sec.overf .sel_imul .sel_options
+{
+    min-height: 30px;
+    max-height: 120px;
+}
+
+.sec .sel_options .sel_option:hover, .sec .sel_options .sel_option.sel_ed
+{
+    background:#6A9FAB;
+    border:1px solid #0C4C57;
+    color:#fff;
+    cursor:pointer;
+}
+
+.sec .sel_imul .sel_selected .sel_arraw
+{
+    background-image:url('darr_dd_out.gif');
+}
+
+.sec.round .sel_imul .sel_selected
+{
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+}
+
+.sec.round .sel_imul .sel_selected .sel_arraw
+{
+    -webkit-border-radius:0 5px 5px 0;
+    -moz-border-radius:0 5px 5px 0;
+    border-radius:0 5px 5px 0;
+}
+
+.sec.round .sel_imul .sel_options
+{
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+}
