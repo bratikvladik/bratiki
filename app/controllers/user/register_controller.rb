@@ -22,7 +22,7 @@ class User::RegisterController < ApplicationController
   def step2
     unless request.post? && session[:user]
       redirect_to :action => "step1"
-    else    
+    else
       session[:last_name] = params[:last_name]
       session[:first_name] = params[:first_name]
       session[:middle_name] = params[:middle_name]

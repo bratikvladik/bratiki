@@ -1,6 +1,7 @@
 Bratiki::Application.routes.draw do
 
   match 'project/restart' => 'project#restart'
+  match 'project/load_schedule' => 'project#load_schedule'
 
   root :to => 'pages/admin#index'
   scope :module => "user" do
@@ -18,6 +19,7 @@ Bratiki::Application.routes.draw do
   scope :module => "pages" do
     match 'admin' => 'admin#index'
     match 'home' => 'home#index'
+    match 'schedule' => 'home#schedule'
   end
 
   scope :module => "admin" do

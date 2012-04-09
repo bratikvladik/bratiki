@@ -6,7 +6,8 @@ gem 'rails', '3.2.3'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql2'
-#gem 'roo'
+gem 'spreadsheet'
+gem "watu_table_builder", :require => "table_builder"
 
 # Gems used only for assets and not required
 # in production environments by default.

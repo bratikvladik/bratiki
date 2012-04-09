@@ -1,3 +1,2 @@
 <label for="chair">Кафедра</label>
 <%= select_tag(:chair, options_from_collection_for_select(chairs, :id, :name, session[:chair_id]), {:class => "select", :id => "chair", :prompt => "кафедра"}) %>
-

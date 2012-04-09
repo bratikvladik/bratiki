@@ -7,10 +7,11 @@
         <%= select_tag(:faculty, options_from_collection_for_select(Faculty.all, :id, :name, session[:faculty_id]), {:class => "select", :id => "faculty", :prompt => "факультет"}) %>
       </p>
     <% end %>
-    <% unless Chair.all.empty? %>
+    <% chairs = (session[:faculty_id])? ((Faculty.find(session[:faculty_id]).chairs.empty?)?(Chair.all):(Faculty.find(session[:faculty_id]).chairs)): (Chair.all)%>
+    <% unless chairs.empty? %>
       <p>
         <label for="chair">Кафедра</label>
-        <%= select_tag(:chair, options_from_collection_for_select(Chair.all, :id, :name, session[:chair_id]), {:class => "select", :id => "chair", :prompt => "кафедра"}) %>
+        <%= select_tag(:chair, options_from_collection_for_select(chairs, :id, :name, session[:chair_id]), {:class => "select", :id => "chair", :prompt => "кафедра"}) %>
       </p>
     <% end %>
     <% unless MilitaryRank.all.empty? %>

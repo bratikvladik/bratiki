@@ -56,6 +56,10 @@ class User < ActiveRecord::Base
     self.last_name + " " + self.first_name + " " + self.middle_name 
   end
 
+  def last_name_with_initials
+    self.last_name + " " + self.first_name.upcase[0] + " " + self.middle_name.upcase[0]
+  end
+
   private
   def self.authenticate(email, password)
     user = self.where(:email => email, :password => password).first
