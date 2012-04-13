@@ -1,5 +1,0 @@
-<article id="register">
-  <section class="form">
-      <%= render :partial => "step3" %>
-  </section>
-</article>
