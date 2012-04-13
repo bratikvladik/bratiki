@@ -65,7 +65,7 @@
       <file leaf-file-name="register.css.scss" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/user/register.css.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="223" column="19" selection-start="5958" selection-end="5958" vertical-scroll-proportion="0.8268041">
+            <state line="6" column="7" selection-start="301" selection-end="301" vertical-scroll-proportion="0.185567">
               <folding />
             </state>
           </provider>
@@ -157,7 +157,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="218" />
-    <option name="y" value="198" />
+    <option name="y" value="199" />
     <option name="width" value="1462" />
     <option name="height" value="914" />
   </component>
@@ -718,7 +718,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="218" y="198" width="1462" height="914" extended-state="0" />
+    <frame x="218" y="199" width="1462" height="914" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32922825" sideWeight="0.7765363" order="0" side_tool="false" content_ui="tabs" />
@@ -882,7 +882,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/user/register.css.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="223" column="19" selection-start="5958" selection-end="5958" vertical-scroll-proportion="0.8268041">
+        <state line="6" column="7" selection-start="301" selection-end="301" vertical-scroll-proportion="0.185567">
           <folding />
         </state>
       </provider>
