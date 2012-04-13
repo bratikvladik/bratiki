@@ -15,3 +15,17 @@
     <% end %>
   </ul>
 <% end %>
+
+<%= table_for @users do |t| %>
+  <%= t.body do |user| %>
+    <%= t.r do %>
+      <%= t.d link_to(user.full_name, { :controller => '/admin/user', :action => 'edit', :id => user }) %>
+      <% if user.id != 1 %>
+        <%= t.d link_to("удалить", { :controller => '/admin/user', :action => 'destroy', :id => user }) %>
+      <% end %>
+      <% if !user.activated && user.id != 1 %>
+        <%= t.d link_to("активировать", { :controller => '/admin/user', :action => 'activate', :id => user }) %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>

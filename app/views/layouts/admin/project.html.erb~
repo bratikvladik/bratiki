@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<head>
+  <title> Проект </title>
+  <%= stylesheet_link_tag "admin/project" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<header>
+  <%= button_to("перезагрузить проект", {:controller => '/project', :action => 'restart'},{:id => "restart", :confirm => "Перезагрузить проект?"}) %>
+</header>
+<%= yield %>
+</body>
+</html>

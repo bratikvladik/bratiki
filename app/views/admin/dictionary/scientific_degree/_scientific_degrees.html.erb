@@ -1,0 +1,10 @@
+<% for scientific_degree in @scientific_degrees %>
+    <ul>
+      <li>
+        <%= link_to(scientific_degree.name, { :controller => 'admin/dictionary/scientific_degree', :action => 'edit', :id => scientific_degree}) %>
+      </li>
+      <li>
+        <%= link_to("удалить", { :controller => 'admin/dictionary/scientific_degree', :action => 'destroy', :id => scientific_degree }) %>
+      </li>
+    </ul>
+<% end %>

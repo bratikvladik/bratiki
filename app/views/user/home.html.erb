@@ -1,0 +1,71 @@
+<article>
+  <section id="main">
+    <%= form_tag({:action => "home"}) do %>
+      <p>
+        <label>Фамилия</label>
+        <%=  @user.last_name %>
+      </p>
+      <p>
+        <label>Имя</label>
+        <%=  @user.first_name %>
+      </p>
+      <p>
+        <label>Отчество</label>
+        <%=  @user.middle_name %>
+      </p>
+      <p>
+        <label>Пол</label>
+        <%=  Sex.find(@user.sex_id).name %>
+      </p>
+      <% if @user.chair_id %>
+        <p>
+          <label>Кафедра</label>
+          <%=  Chair.find(@user.chair_id).name%>
+        </p>
+      <% end %>
+      <% if @user.military_rank_id %>
+        <p>
+          <label>Воинское звание</label>
+          <%=  MilitaryRank.find(@user.military_rank_id).name %>
+        </p>
+      <% end %>
+      <% if @user.scientific_rank_id %>
+        <p>
+          <label>Ученое звание</label>
+          <%=  ScientificRank.find(@user.scientific_rank_id).name %>
+        </p>
+      <% end %>
+      <% if @user.scientific_degree_id %>
+        <p>
+          <label>Ученая степень</label>
+          <%=  ScientificDegree.find(@user.scientific_degree_id).name %>
+        </p>
+      <% end %>
+      <% if @user.post_id %>
+        <p>
+          <label>Должность</label>
+          <%=  Post.find(@user.post_id).name %>
+        </p>
+      <% end %>
+      <% if @user.room %>
+        <% unless @user.room.empty? %>
+          <p>
+            <label>Комната</label>
+            <%=  @user.room %>
+          </p>
+        <% end %>
+      <% end %>
+      <% if @user.phone %>
+        <% unless @user.phone.empty? %>
+          <p>
+            <label>Телефон</label>
+            <%=  @user.phone %>
+          </p>
+        <% end %>
+      <% end %>
+      <p class="button">
+        <%= submit_tag "Изменить" %>
+      </p>
+    <% end %>
+  </section>
+</article>

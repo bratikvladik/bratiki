@@ -1,0 +1,9 @@
+<nav>
+  <ul>
+    <li><%= link_to("Проект", { :controller => '/project', :action => 'index' })%></li>
+    <li><%= link_to("Пользователи", { :controller => '/admin/user', :action => 'index' })%></li>
+    <li><%= link_to("Факультеты", { :controller => '/admin/faculty', :action => 'index' })%></li>
+    <li><%= link_to("Словари", { :controller => '/admin/dictonary', :action => 'index' })%></li>
+    <li><%= link_to("Выход", {:controller => "/user/login", :action => "logout"})%></li>
+  </ul>
+</nav>​

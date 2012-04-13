@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Пользователь</title>
+  <%= stylesheet_link_tag "admin" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<header>
+  <nav>
+    <ul>
+      <li><%= link_to("Расписание", {:controller => "/user", :action => "schedule"})%></li>
+      <li><%= link_to("Выход", {:controller => "/user/login", :action => "logout"})%></li>
+    </ul>
+  </nav>​
+  <%= button_to("перезагрузить проект", {:controller => 'admin/project', :action => 'restart'},{:id => "restart", :confirm => "Перезагрузить проект?"}) %>
+</header>
+<%= yield %>
+</body>
+</html>

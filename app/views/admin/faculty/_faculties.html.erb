@@ -1,10 +1,10 @@
 <% for faculty in @faculties %>
     <ul>
       <li>
-        <%= link_to(faculty.name, { :controller => 'admin/faculty', :action => 'edit', :id => faculty}) %>
+        <%= link_to(faculty.name, { :controller => '/admin/faculty', :action => 'edit', :id => faculty}) %>
       </li>
       <li>
-        <%= link_to("удалить", { :controller => 'admin/faculty', :action => 'destroy', :id => faculty }) %>
+        <%= link_to("удалить", { :controller => '/admin/faculty', :action => 'destroy', :id => faculty }) %>
       </li>
     </ul>
 <% end %>

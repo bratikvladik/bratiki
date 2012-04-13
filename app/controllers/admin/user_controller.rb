@@ -17,6 +17,7 @@ class Admin::UserController < ApplicationController
                       :chair_id => params[:chair],
                       :military_rank_id => params[:military_rank],
                       :scientific_rank_id => params[:scientific_rank],
+                      :scientific_degree_id => params[:scientific_degree],
                       :post_id => params[:post],
                       :phone => params[:phone],
                       :room => params[:room])
@@ -80,6 +81,7 @@ class Admin::UserController < ApplicationController
                             :chair_id => params[:chair],
                             :military_rank_id => params[:military_rank],
                             :scientific_rank_id => params[:scientific_rank],
+                            :scientific_degree_id => params[:scientific_degree],
                             :post_id => params[:post],
                             :phone => params[:phone],
                             :room => params[:room])

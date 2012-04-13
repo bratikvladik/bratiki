@@ -1,0 +1,10 @@
+<% for post in @posts %>
+    <ul>
+      <li>
+        <%= link_to(post.name, { :controller => 'admin/dictionary/post', :action => 'edit', :id => post}) %>
+      </li>
+      <li>
+        <%= link_to("удалить", { :controller => 'admin/dictionary/post', :action => 'destroy', :id => post }) %>
+      </li>
+    </ul>
+<% end %>

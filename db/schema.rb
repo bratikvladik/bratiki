@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120408070305) do
+ActiveRecord::Schema.define(:version => 20120412142009) do
 
   create_table "chairs", :force => true do |t|
     t.string   "name"
@@ -28,17 +28,20 @@ ActiveRecord::Schema.define(:version => 20120408070305) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "logs", :force => true do |t|
-    t.text     "content"
-    t.integer  "user_id"
+  create_table "military_ranks", :force => true do |t|
+    t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
-  add_index "logs", ["user_id"], :name => "index_logs_on_user_id"
-
-  create_table "military_ranks", :force => true do |t|
-    t.string   "name"
+  create_table "pairs", :force => true do |t|
+    t.string   "object"
+    t.string   "kind"
+    t.integer  "number"
+    t.string   "teacher"
+    t.datetime "date_time"
+    t.string   "place"
+    t.string   "group"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -47,18 +50,6 @@ ActiveRecord::Schema.define(:version => 20120408070305) do
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-  end
-
-  create_table "schedules", :force => true do |t|
-    t.string   "last_name_with_initials"
-    t.datetime "date_time"
-    t.integer  "number"
-    t.string   "object"
-    t.string   "place"
-    t.string   "kind"
-    t.string   "group"
-    t.datetime "created_at",              :null => false
-    t.datetime "updated_at",              :null => false
   end
 
   create_table "scientific_degrees", :force => true do |t|

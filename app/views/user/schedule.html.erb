@@ -1,0 +1,20 @@
+<article>
+  <section id="main">
+    <div id="calendar">
+      <h2 id="month">
+        <%= button_to("<", {:month => (@date.beginning_of_month-1).strftime("%Y-%m")}, {:class => "row"}) %>
+        <%= format_date @date %>
+        <%= button_to(">", {:month => (@date.end_of_month+1).strftime("%Y-%m")}, {:class => "row"}) %>
+      </h2>
+      <%= calendar_for(@pairs, :year => @date.year, :month => @date.month, :first_day_of_week => 1) do |calendar| %>
+          <%= calendar.head('Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье') %>
+          <% calendar.day(:day_method => :date_time) do |date, day| %>
+                <%= date.day %><br/>
+                <% for pair in day %>
+                   <%= pair.object %>
+                <% end %>
+          <% end %>
+      <% end %>
+    </div>
+  </section>
+</article>

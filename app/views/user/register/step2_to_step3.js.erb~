@@ -1,0 +1,68 @@
+$("#register").html("<%= escape_javascript(render(:partial => "step3")) %>");
+if ($("#phone").val())
+{
+  reg = /^[0-9]{11}$/i
+  var val = $("#phone").val()
+  if (reg.test(val))
+  {
+    $("#phone").css("background", "rgba(0, 255, 0, 0.2)");
+  }
+  else
+  {
+    $("#phone").css("background", "rgba(255, 0, 0, 0.2)");
+    $("#error_phone").text("некорректный номер телефона");
+  }
+}
+if ($("#room").val())
+{
+  $("#room").css("background", "rgba(0, 255, 0, 0.2)")
+}
+if ($("#phone").css("backgroundColor") == "rgba(255, 0, 0, 0.2)")
+{
+  $("#phone").focus();
+}
+else if ($("#room").css("backgroundColor") == "rgba(255, 0, 0, 0.2)")
+{
+  $("#room").focus();
+}
+
+reselect = function(select, addclass, id) {
+    var sel_imul, sel_options, selected_option;
+    if (typeof addclass === 'undefined') addclass = '';
+    $(select).wrap('<div class="sel_wrap ' + addclass + '"/>');
+    sel_options = '';
+    selected_option = false;
+    $(select).children('option').each(function() {
+        if ($(this).is(':selected')) selected_option = $(this).index();
+        return sel_options = sel_options + '<div class="sel_option" value="' + $(this).val() + '">' + $(this).html() + '</div>';
+    });
+    sel_imul = '<div class="sel_imul" id="' + id + '"><div class="sel_selected"><div class="sel_icon">u</div><div class="selected-text">' + $(select).children('option').eq(selected_option).html() + '</div><div class="sel_arraw"></div></div><div class="sel_options">' + sel_options + '</div></div>';
+    return $(select).before(sel_imul);
+};
+
+
+reselect('#faculty', 'sec overf round', 'faculty_id');
+reselect('#chair', 'sec overf round', 'chair_id');
+reselect('#military_rank', 'sec overf round', 'military_rank_id');
+reselect('#scientific_rank', 'sec overf round', 'scientific_rank_id');
+reselect('#scientific_degree', 'sec overf round', 'scientififc_degree_id');
+reselect('#post', 'sec overf round', '#post_id');
+
+//$("#faculty_id").children('.sel_options').children('.sel_option').each(function(){alert($(this).text())});
+
+//$("#faculty_id").children('.sel_options').children('.sel_option').each(function(){$(this).live("click", function(){alert(123)});alert(123)});
+//$("#faculty_id").children(".sel_options").children(".sel_option").live("click", function(e){alert($(this).text());e.stopPropagation();})​
+
+
+    //$('#faculty_id .sel_options .sel_option').live('click', function(e) {
+    //    faculty = $(this).attr('value');
+    //    if (!faculty){faculty = 0}
+
+    //   jQuery.get('/register/update_chair_select/' + faculty, function(data) {return $("#chair").parent('div').parent('p').html(data);
+    //    });
+    //    setTimeout(function(){reselect('#chair', 'sec overf round', 'chair_id');}, 1000);
+        //reselect('#chair', 'sec overf round', 'chair_id');
+    //    e.stopPropagation();
+
+
+    //});

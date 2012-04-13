@@ -7,7 +7,7 @@
         <%= select_tag(:faculty, options_from_collection_for_select(Faculty.all, :id, :name, session[:faculty_id]), {:class => "select", :id => "faculty", :prompt => "факультет"}) %>
       </p>
     <% end %>
-    <% chairs = (session[:faculty_id])? ((Faculty.find(session[:faculty_id]).chairs.empty?)?(Chair.all):(Faculty.find(session[:faculty_id]).chairs)): (Chair.all)%>
+    <% chairs = (session[:faculty_id] && session[:faculty_id] != "")? ((Faculty.find(session[:faculty_id]).chairs.empty?)?(Chair.all):(Faculty.find(session[:faculty_id]).chairs)): (Chair.all)%>
     <% unless chairs.empty? %>
       <p>
         <label for="chair">Кафедра</label>
@@ -49,8 +49,8 @@
       <label for="room" id="error_room" class="error"><%= flash[:room] %></label>
     </p>
     <p class="button">
-      <%= submit_tag "Назад", :id => "step3_to_step2" %>
       <%= submit_tag "Завершить", :id => "step3_to_step4" %>
+      <%= submit_tag "Назад", :id => "step3_to_step2" %>
     </p>
   <% end %>
 </section>
@@ -62,5 +62,6 @@
     </p>
   </section>
 <% end %>
-<%= button_to("",{:controller => 'pages/admin', :action => 'index'}, {:id => "end_of_registration", :display => "none"}) %>
-
+<section class="invisible">
+  <%= button_to("",{:controller => '/admin', :action => 'home'}, {:id => "end_of_registration"}) %>
+</section>

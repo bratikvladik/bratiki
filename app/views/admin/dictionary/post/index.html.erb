@@ -1,0 +1,11 @@
+<article id="posts">
+  <section id="main">
+    <%= render(:partial => 'posts') %>
+    <ul>
+      <li>
+        <%= link_to("добавить", { :controller => '/admin/dictionary/post', :action => 'new'}) %>
+      </li>
+    </ul>
+  </section>
+</article>
+

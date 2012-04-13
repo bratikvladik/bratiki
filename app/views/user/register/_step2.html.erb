@@ -19,12 +19,12 @@
       <label for="middle_name"  id="error_middle_name" class="error"><%= flash[:middle_name] %></label>
     </p>
     <p>
-      <label for="sex">Ваш пол</label>
+      <label for="sex" data-icon="u" >Ваш пол</label>
       <%= select_tag(:sex, options_from_collection_for_select(Sex.all, :id, :name, session[:sex]),  {:class => "select", :id => "sex"}) %>
     </p>
     <p class="register button">
-      <%= submit_tag "Назад", :id => "step2_to_step1" %>
       <%= submit_tag "Далее", :id => "step2_to_step3" %>
+      <%= submit_tag "Назад", :id => "step2_to_step1" %>
       <%= submit_tag "Завершить", :id => "step2_to_step4" %>
     </p>
   <% end %>
@@ -37,4 +37,6 @@
     </p>
   </section>
 <% end %>
-<%= button_to("",{:controller => 'pages/admin', :action => 'index'}, {:id => "end_of_registration", :display => "none"}) %>
+<section class="invisible">
+  <%= button_to("",{:controller => '/admin', :action => 'home'}, {:id => "end_of_registration"}) %>
+</section>

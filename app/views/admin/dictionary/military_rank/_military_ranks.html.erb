@@ -1,0 +1,10 @@
+<% for military_rank in @military_ranks %>
+    <ul>
+      <li>
+        <%= link_to(military_rank.name, { :controller => 'admin/dictionary/military_rank', :action => 'edit', :id => military_rank}) %>
+      </li>
+      <li>
+        <%= link_to("удалить", { :controller => 'admin/dictionary/military_rank', :action => 'destroy', :id => military_rank }) %>
+      </li>
+    </ul>
+<% end %>

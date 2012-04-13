@@ -1,10 +1,10 @@
 <% for chair in @chairs %>
     <ul>
       <li>
-        <%= link_to(chair.name, { :controller => 'admin/chair', :action => 'edit', :id => chair }) %>
+        <%= link_to(chair.name, { :controller => '/admin/chair', :action => 'edit', :id => chair }) %>
       </li>
       <li>
-        <%= link_to("удалить", { :controller => 'admin/chair', :action => 'destroy', :id => chair }) %>
+        <%= link_to("удалить", { :controller => '/admin/chair', :action => 'destroy', :id => chair }) %>
       </li>
     </ul>
 <% end %>

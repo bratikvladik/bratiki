@@ -1,0 +1,4 @@
+<%= form_tag({:action => :load_schedule}, :multipart => true) do %>
+  <%= file_field_tag 'schedule' %>
+  <%= submit_tag "Загрузить" %>
+<% end %>

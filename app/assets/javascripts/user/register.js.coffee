@@ -270,12 +270,15 @@ jQuery ->
               else
                 $("#password").css("background", "rgba(255, 0, 0, 0.2)");
                 $("#error_password").text("слабый пароль");
+                $("#password").focus();
             else
               $("#password").css("background", "rgba(255, 0, 0, 0.2)");
               $("#error_password").text("пароль слишком длинный");
+              $("#password").focus();
           else
             $("#password").css("background", "rgba(255, 0, 0, 0.2)");
             $("#error_password").text("пароль слишком короткий");
+            $("#password").focus();
         else
           $("#password").css("background", "rgba(255, 0, 0, 0.2)");
       else
@@ -284,6 +287,7 @@ jQuery ->
         $("#password").focus();
 
     if $("#email").val()
+      alret(123);
       reg = /^([a-z0-9_\-]+\.)*[a-z0-9_\-]+\@([a-z0-9][a-z0-9\-]*[a-z0-9]\.)+[a-z]{2,4}$/i;
       val = $("#email").val();
       if reg.test(val)
@@ -292,6 +296,7 @@ jQuery ->
           if data != "true"
             $("#email").css("background", "rgba(255, 0, 0, 0.2)");
             $("#error_email").text("пользователь с таким email уже зарегистрирован");
+            $("#email").focus();
           else
             $("#email").css("background", "rgba(0, 255, 0, 0.2)");
             $("#error_email").text("");

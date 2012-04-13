@@ -1,0 +1,19 @@
+<article id="edit_post">
+  <section id="main">
+    <%= form_tag({:action => "edit"}) do %>
+        <h1>
+          Изменение
+        </h1>
+
+        <p class="field">
+          <label for="name" data-icon="u" > Название </label>
+          <%= text_field_tag("name", @post.name, {:placeholder => "Начальник кафедры"})  %>
+          <label for="name" id="error_name" class="error"><%= flash[:name] %></label>
+        </p>
+
+        <p class="button">
+          <%= submit_tag "Изменить" %>
+        </p>
+    <% end %>
+  </section>
+</article>

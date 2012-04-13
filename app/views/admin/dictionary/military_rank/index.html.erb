@@ -1,0 +1,11 @@
+<article id="military_ranks">
+  <section id="main">
+    <%= render(:partial => 'military_ranks') %>
+    <ul>
+      <li>
+        <%= link_to("добавить", { :controller => '/admin/dictionary/military_rank', :action => 'new'}) %>
+      </li>
+    </ul>
+  </section>
+</article>
+

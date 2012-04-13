@@ -2,13 +2,13 @@
 <html>
 <head>
   <title>Вход</title>
-  <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js", "/assets/jquery.js", "/assets/jquery_ujs.js", "/assets/user/register", "/assets/user/script", "http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js" %>
-  <%= stylesheet_link_tag "application" %>
+  <%= stylesheet_link_tag "user/login" %>
+  <%= javascript_include_tag "jquery", "jquery_ujs", "jquery-ui", "user/login" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 <header>
-  <%= button_to("перезагрузить проект", {:controller => '/project', :action => 'restart'},{:id => "restart", :confirm => "Перезагрузить проект?"}) %>
+  <%= button_to("перезагрузить проект", {:controller => '/admin/project', :action => 'restart'}, {:id => "restart", :confirm => "Перезагрузить проект?"}) %>
 </header>
 <%= yield %>
 </body>

@@ -1,0 +1,21 @@
+<nav>
+  <ul>
+    <li><%= link_to("Назад", { :controller => '/admin/dictonary', :action => 'index' })%></li>
+    <li><%= link_to("Воинкие звания", { :controller => '/admin/dictonary/military_rank', :action => 'index' })%></li>
+    <li><%= link_to("Ученые звания", { :controller => '/admin/dictonary/scientific_rank', :action => 'index' })%></li>
+    <li><%= link_to("Ученые степени", { :controller => '/admin/dictonary/scientific_degree', :action => 'index' })%></li>
+    <li><%= link_to("Должности", { :controller => '/admin/dictonary/post', :action => 'index' })%></li>
+    <li><%= link_to("Выход", {:controller => "/user/login", :action => "logout"})%></li>
+  </ul>
+</nav>​
+<article id="scientific_degrees">
+  <section id="main">
+    <%= render(:partial => 'scientific_degrees') %>
+    <ul>
+      <li>
+        <%= link_to("добавить", { :controller => '/admin/dictonary/scientific_degree', :action => 'new'}) %>
+      </li>
+    </ul>
+  </section>
+</article>
+

@@ -1,10 +1,11 @@
 Bratiki::Application.routes.draw do
 
-  match 'project/restart' => 'project#restart'
-  match 'project/load_schedule' => 'project#load_schedule'
+  root :to => 'user/login#login'
+  match 'admin' => 'admin#home'
+  match 'home' => 'user#home'
+  match 'schedule' => 'user#schedule'
 
-  root :to => 'pages/admin#index'
-  scope :module => "user" do
+  scope :module => 'user' do
     match 'register' => 'register#step1'
     match 'register/step2' => 'register#step2'
     match 'register/step3' => 'register#step3'
@@ -14,15 +15,13 @@ Bratiki::Application.routes.draw do
 
     match 'login/login' => 'login#login'
     match 'login/logout' => 'login#logout'
+    match 'login/check_of_existence_email' => 'login#check_of_existence_email'
+    match 'login/authorize' => 'login#authorize'
+    match 'login/activated' => 'login#activated'
+    match 'login/banned' => 'login#banned'
   end
 
-  scope :module => "pages" do
-    match 'admin' => 'admin#index'
-    match 'home' => 'home#index'
-    match 'schedule' => 'home#schedule'
-  end
-
-  scope :module => "admin" do
+  namespace :admin do
     match 'user/index' => 'user#index'
     match 'user/new' => 'user#new'
     match 'user/:id' => 'user#show'
@@ -42,14 +41,13 @@ Bratiki::Application.routes.draw do
     match 'chair/:id/destroy' => 'chair#destroy'
     match 'chair/:id/edit' => 'chair#edit'
 
-    match 'dictonary/index' => 'dictonary#index'
+    match 'project/restart' => 'project#restart'
+    match 'project/load_schedule' => 'project#load_schedule'
+    match 'project' => 'project#index'
 
-    namespace :dictonary do
-      match 'sex/index' => 'sex#index'
-      match 'sex/new' => 'sex#new'
-      match 'sex/:id/destroy' => 'sex#destroy'
-      match 'sex/:id/edit' => 'sex#edit'
+    match 'dictionary/index' => 'dictionary#index'
 
+    namespace :dictionary do
       match 'military_rank/index' => 'military_rank#index'
       match 'military_rank/new' => 'military_rank#new'
       match 'military_rank/destroy' => 'military_rank#destroy'

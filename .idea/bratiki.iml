@@ -74,6 +74,7 @@
     <orderEntry type="library" scope="PROVIDED" name="treetop (v1.4.10, ruby-1.9.3-p125) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tzinfo (v0.3.32, ruby-1.9.3-p125) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="uglifier (v1.2.4, ruby-1.9.3-p125) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="watu_table_builder (v0.3.0, ruby-1.9.3-p125) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="webrat (v0.7.3, ruby-1.9.3-p125) [gem]" level="application" />
   </component>
   <component name="RModuleSettingsStorage">

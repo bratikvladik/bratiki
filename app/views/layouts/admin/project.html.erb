@@ -1,0 +1,21 @@
+<html>
+<head>
+  <title> Проект </title>
+  <%= stylesheet_link_tag 'admin/project' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<header>
+  <nav>
+    <ul>
+      <li><%= link_to("Назад", { :controller => '/admin', :action => 'home' })%></li>
+      <li><%= link_to("Перезагрузить проект", { :controller => '/admin/project', :action => 'restart' })%></li>
+      <li><%= link_to("Загрузить расписание", { :controller => '/admin/project', :action => 'load_schedule' })%></li>
+      <li><%= link_to("Выход", {:controller => '/user/login', :action => 'logout'})%></li>
+    </ul>
+  </nav>​
+  <%= button_to("перезагрузить проект", {:controller => '/admin/project', :action => 'restart'},{:id => "restart", :confirm => "Перезагрузить проект?"}) %>
+</header>
+<%= yield %>
+</body>
+</html>

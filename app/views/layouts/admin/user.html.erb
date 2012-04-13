@@ -1,13 +1,21 @@
-<!DOCTYPE html>
+<html>
 <head>
   <title>Пользователи</title>
-  <%= javascript_include_tag "/assets/jquery.js", "/assets/jquery_ujs.js", "/assets/admin/user" %>
-  <%= stylesheet_link_tag "application" %>
+  <%= stylesheet_link_tag "admin/admin_user" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 <header>
-  <%= button_to("перезагрузить проект", {:controller => '/project', :action => 'restart'},{:id => "restart", :confirm => "Перезагрузить проект?"}) %>
+  <nav>
+    <ul>
+      <li><%= link_to("Назад", { :controller => '/admin', :action => 'home' })%></li>
+      <li><%= link_to("Пользователи", { :controller => '/admin/user', :action => 'index' })%></li>
+      <li><%= link_to("Факультеты", { :controller => '/admin/faculty', :action => 'index' })%></li>
+      <li><%= link_to("Словари", { :controller => '/admin/dictionary', :action => 'index' })%></li>
+      <li><%= link_to("Выход", {:controller => '/user/login', :action => 'logout'})%></li>
+    </ul>
+  </nav>
+  <%= button_to("перезагрузить проект", {:controller => '/admin/project', :action => 'restart'},{:id => "restart", :confirm => "Перезагрузить проект?"}) %>
 </header>
 <%= yield %>
 </body>
